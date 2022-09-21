@@ -70,16 +70,14 @@ class Conta:
         if 0 < valor <= self.saldo_total:
             if valor < self.saldo:
                 self.saldo -= valor
-                print('Saque realizado com sucesso')
                 self.saldo_total = self._calcula_saldo_total
-                self.extrato()
             else:
                 saldo_negativo: float = self.saldo - valor
                 self.limite += saldo_negativo
                 self.saldo = 0
                 self.saldo_total = self._calcula_saldo_total
-                print('Saque realizado com sucesso')
-                self.extrato()
+            print('Saque realizado com sucesso')
+            self.extrato()
         elif valor == 0:
             print('Não foi possível realizar o saque. Tente novamente')
         else:
@@ -92,8 +90,6 @@ class Conta:
                 self.saldo_total = self._calcula_saldo_total
                 destino.saldo += valor
                 destino.saldo_total = destino._calcula_saldo_total
-                print('Transferência realizada com sucesso')
-                self.extrato()
             else:
                 saldo_negativo: float = self.saldo - valor
                 self.limite += saldo_negativo
@@ -101,8 +97,8 @@ class Conta:
                 self.saldo_total = self._calcula_saldo_total
                 destino.saldo += valor
                 destino.saldo_total = destino._calcula_saldo_total
-                print('Transferência realizada com sucesso')
-                self.extrato()
+            print('Transferência realizada com sucesso')
+            self.extrato()
         else:
             print('Transferência não realizada')
 
