@@ -17,7 +17,7 @@ class Cliente:
 
     def __str__(self: object) -> str:
         return f'Código: {self.codigo}\nNome: {self.nome}\nData de Nascimento: {self.data_nascimento}' \
-               f'\nCadastro: {self.data_cadastro}\n'
+               f'\nCadastro: {self.data_cadastro}\nE-mail: {self.email}'
 
     @property
     def codigo(self: object) -> int:

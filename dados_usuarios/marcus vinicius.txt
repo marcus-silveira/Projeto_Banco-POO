@@ -1,0 +1,5 @@
+Código: 101
+Nome: marcus vinicius
+Data de Nascimento: 10/11/2001
+Cadastro: 22/09/2022
+E-mail: marcus@gmail.com

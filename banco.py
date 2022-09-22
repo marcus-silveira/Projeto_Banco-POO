@@ -3,6 +3,7 @@ from time import sleep
 
 from models.cliente import Cliente
 from models.conta import Conta
+from utils.helper import armazenar_dados, tratar_informacoes
 
 contas: List[Conta] = []
 
@@ -25,22 +26,25 @@ def menu() -> None:
     print('5 - Listar contas')
     print('6 - Sair do sistema')
 
-    opcao: int = int(input('\nDigite uma opção: '))
+    opcao = (input('\nDigite uma opção: '))
 
-    if opcao == 1:
-        criar_conta()
-    elif opcao == 2:
-        efetuar_saque()
-    elif opcao == 3:
-        efetuar_deposito()
-    elif opcao == 4:
-        efetuar_transferencia()
-    elif opcao == 5:
-        listar_contas()
-    elif opcao == 6:
-        print('Volte sempre!')
-        sleep(2)
-        exit()
+    if opcao.isnumeric() and 0 < int(opcao) < 7:
+        opcao = int(opcao)
+
+        if opcao == 1:
+            criar_conta()
+        elif opcao == 2:
+            efetuar_saque()
+        elif opcao == 3:
+            efetuar_deposito()
+        elif opcao == 4:
+            efetuar_transferencia()
+        elif opcao == 5:
+            listar_contas()
+        elif opcao == 6:
+            print('Volte sempre!')
+            sleep(2)
+            exit()
     else:
         print('Opção inválida')
         sleep(2)
@@ -54,12 +58,16 @@ def criar_conta() -> None:
     email: str = input('E-mail do cliente: ')
     cpf: str = input('CPF do cliente: ')
     data_nascimento: str = input('Data de nascimento: ')
+    if not data_nascimento:
+        print('Você informou uma data inválida')
+        menu()
 
     cliente: Cliente = Cliente(nome, email, cpf, data_nascimento)
 
     conta: Conta = Conta(cliente)
 
     contas.append(conta)
+    armazenar_dados(cliente)
 
     print('Conta criada com sucesso!')
     print('Dados da conta: ')
