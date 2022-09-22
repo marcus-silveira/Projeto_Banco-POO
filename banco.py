@@ -61,7 +61,10 @@ def criar_conta() -> None:
     if not data_nascimento:
         print('Você informou uma data inválida')
         menu()
-
+    
+    nome = tratar_informacoes(nome, cpf)[0]
+    cpf = tratar_informacoes(nome, cpf)[1]
+    
     cliente: Cliente = Cliente(nome, email, cpf, data_nascimento)
 
     conta: Conta = Conta(cliente)

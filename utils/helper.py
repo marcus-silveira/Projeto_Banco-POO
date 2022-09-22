@@ -24,13 +24,13 @@ def armazenar_dados(cliente: object):
     dados.close()
 
 
-def tratar_informacoes(nome: str, cpf: str) -> None:
+def tratar_informacoes(nome: str, cpf: str) -> list[str]:
     nomes = []
     for i in nome.split():
         nomes.append(i.capitalize())
         nomes.append(' ')
-    nome_completo = ''
-    nome_completo = nome_completo.join(nomes)
+    nome = ''
+    nome = nome.join(nomes)
 
     cpfs = []
     cpf = cpf.replace('.', '').replace('-', '')
@@ -40,7 +40,4 @@ def tratar_informacoes(nome: str, cpf: str) -> None:
     cpf = ''
     cpf = cpf.join(cpfs)
 
-    return print(cpf)
-
-
-print(str_for_date('10/11/2001'))
+    return [nome, cpf]

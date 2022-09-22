@@ -16,7 +16,9 @@ class Cliente:
         Cliente.contador += 1
 
     def __str__(self: object) -> str:
-        return f'Código: {self.codigo}\nNome: {self.nome}\nData de Nascimento: {self.data_nascimento}' \
+        return f'Código: {self.codigo}\nNome: {self.nome}' \
+               f'\nCPF: {self.cpf}' \
+               f'\nData de Nascimento: {self.data_nascimento}' \
                f'\nCadastro: {self.data_cadastro}\nE-mail: {self.email}'
 
     @property
@@ -42,5 +44,3 @@ class Cliente:
     @property
     def data_cadastro(self: object) -> str:
         return date_for_str(self.__data_cadastro)
-
-
