@@ -1,6 +1,0 @@
-Código: 101
-Nome: Marcus Vinicius De Paula Silveira
-CPF: 600.221.180-70
-Data de Nascimento: 10/11/2001
-Cadastro: 22/09/2022
-E-mail: marcus@gmail.com
