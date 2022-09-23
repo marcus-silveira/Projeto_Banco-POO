@@ -1,4 +1,5 @@
 .idea/
-env/
+venv/
 __pycache__/
 dados_usuario/.txt
+env/
