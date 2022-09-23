@@ -16,7 +16,7 @@ class Cliente:
         Cliente.contador += 1
 
     def __str__(self: object) -> str:
-        return f'Código: {self.codigo}\nNome: {self.nome}' \
+        return f'\nCódigo: {self.codigo}\nNome: {self.nome}' \
                f'\nCPF: {self.cpf}' \
                f'\nData de Nascimento: {self.data_nascimento}' \
                f'\nCadastro: {self.data_cadastro}\nE-mail: {self.email}'
