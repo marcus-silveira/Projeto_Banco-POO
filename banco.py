@@ -5,7 +5,7 @@ from models.cliente import Cliente
 from models.conta import Conta
 from utils.helper import armazenar_dados, tratar_nome, tratar_cpf, confirmar_dados, tratar_data
 
-contas: List[dict] = []
+contas: List[object] = []
 
 
 def main() -> None:
@@ -67,9 +67,9 @@ def criar_conta() -> None:
     if not confirmar_dados(cliente):
         criar_conta()
     else:
-        dados = {cliente.codigo: {'Nome': nome, 'E-mail': email, 'CPF': cpf, 'Nascimento': data_nascimento}}
-        contas.append(dados)
-        armazenar_dados(dados)
+
+        contas.append(conta)
+        armazenar_dados(cliente)
 
     print(f'\nConta criada com sucesso!\nDados da conta: \n--------------------------\n{conta}\n')
     sleep(2)
@@ -149,7 +149,6 @@ def listar_contas() -> None:
 
 def buscar_conta_por_numero(numero: int) -> Conta:
     c: Conta = None
-
     if len(contas) > 0:
         for conta in contas:
             if conta.numero == numero:

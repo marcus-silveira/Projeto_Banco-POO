@@ -1,0 +1,7 @@
+
+Código: 101
+Nome: Marcus 
+CPF: 600.221.150-05
+Data de Nascimento: 10/11/2001
+Cadastro: 26/09/2022
+E-mail: marcus@gmail.com

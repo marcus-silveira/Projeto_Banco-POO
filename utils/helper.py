@@ -1,4 +1,5 @@
 from datetime import date, datetime
+from pathlib import Path
 
 
 def date_for_str(data: date) -> str:
@@ -13,9 +14,9 @@ def format_float_str_moeda(valor: float) -> str:
     return f'R$ {valor:,.2f}'
 
 
-def armazenar_dados(dict_dados: dict):
-    dados = open(f'dados_usuarios/teste1.txt', 'w', encoding='utf-8')
-    dados.write(f'{dict_dados}')
+def armazenar_dados(cliente: object):
+    dados = open(f'dados_usuarios/{cliente.nome}.txt', 'w', encoding='utf-8')
+    dados.write(f'{cliente.__str__()}')
     dados.close()
 
 
